@@ -20,7 +20,13 @@ public class OperacionFactory {
 			
 		} else if (comando.startsWith(TipoOperacion.MOVER_CAR.getOperacion())) {
 			tableroCaro.setInstruccion(comando);
-			return new MoverCarroCM(tableroCaro);	
+			return new MoverCarroCM(tableroCaro);
+		} else if (comando.startsWith(TipoOperacion.ASIGNAR_FILAS.getOperacion())) {
+			tableroCaro.setInstruccion(comando);
+			return new AsignarMaxFilasCM(tableroCaro);
+		} else if (comando.startsWith(TipoOperacion.ASIGNAR_COLUMNAS.getOperacion())) {
+			tableroCaro.setInstruccion(comando);
+			return new AsignarMaxColumnasCM(tableroCaro);	
 		}else{
 			return new OperacionIndefinidaCM();
 		}
