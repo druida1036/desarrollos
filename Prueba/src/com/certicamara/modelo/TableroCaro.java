@@ -82,14 +82,14 @@ public class TableroCaro {
 			xPosicion = xPosicion + deltax;
 		} else if (xPosicion + deltax > xMaxPosicion) {
 			xPosicion = xPosicion + (xMaxPosicion - xPosicion);
-			System.out.println("Se ha detenido el avance por salir de los límites");
+			System.out.println("Se ha detenido el avance por salir de los lï¿½mites");
 		}
 		
 		if (yPosicion + deltay <= yMaxPosicion) {
 			yPosicion = yPosicion + deltay;
 		} else if (yPosicion + deltay > yMaxPosicion) {
 			yPosicion = yPosicion + (yMaxPosicion - yPosicion);
-			System.out.println("Se ha detenido el avance por salir de los límites");
+			System.out.println("Se ha detenido el avance por salir de los lï¿½mites");
 		}
 
 	}
