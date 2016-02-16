@@ -20,6 +20,7 @@ public class Consola {
 		boolean consolaEjecutando = true;
 		sc = new Scanner(System.in);
 	    context = new ClassPathXmlApplicationContext("com/certicamara/confg/applicationContext.xml");
+//	    context.getBean("&tableroCaro");
 		TableroCaro tableroCaro = context.getBean(TableroCaro.class);
 		while (consolaEjecutando){
 			 System.out.println("Por favor ingrese un comando");//Se pide un dato al usuario  

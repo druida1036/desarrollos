@@ -10,4 +10,8 @@ public class ConsultarLCdosCM implements Operacion {
 					+ operacion.getDescripcion());
 		}
 	}
+	
+	public void inicio (){
+		System.out.println("default init method");
+	}
 }

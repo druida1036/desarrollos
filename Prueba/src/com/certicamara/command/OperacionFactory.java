@@ -1,14 +1,21 @@
 package com.certicamara.command;
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.InitializingBean;
+
 import com.certicamara.modelo.TableroCaro;
 import com.certicamara.modelo.TipoOperacion;
 
-public class OperacionFactory {
+public class OperacionFactory implements InitializingBean {
+	
+	public void init(){
+		System.out.println("bean init factory");
+	}
 
 	// use getOrder method to get object of type Order
-	public Operacion getOperacion(String comando, TableroCaro tableroCaro) {
-		if (comando == null) {
-			return null;
-		}
+	public Operacion getOperacion(TableroCaro tableroCaro) {
+		String comando = tableroCaro.getInstruccion();
+
 		if (comando.equalsIgnoreCase(TipoOperacion.CONSUL_COMAND.getOperacion())) {
 			return new ConsultarLCdosCM();
 
@@ -31,5 +38,21 @@ public class OperacionFactory {
 			return new OperacionIndefinidaCM();
 		}
 
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("afterPropertiesSet method");
+		
+	}
+	
+	@PostConstruct
+	public void inicio1 (){
+		System.out.println("postconstructor method");
+	}
+	
+
+	public void inicio (){
+		System.out.println("default init method");
 	}
 }
