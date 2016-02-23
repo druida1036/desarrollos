@@ -5,6 +5,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.certicamara.command.Operacion;
+import com.certicamara.eventos.CustomEventHandler;
+import com.certicamara.eventos.CustomEventPublisher;
 import com.certicamara.modelo.TableroCaro;
 
 
@@ -20,6 +22,8 @@ public class Consola {
 		boolean consolaEjecutando = true;
 		sc = new Scanner(System.in);
 	    context = new ClassPathXmlApplicationContext("com/certicamara/confg/applicationContext.xml");
+	    CustomEventPublisher publisher = context.getBean(CustomEventPublisher.class);
+	    publisher.publish();
 //	    context.getBean("&tableroCaro");
 		TableroCaro tableroCaro = context.getBean(TableroCaro.class);
 		while (consolaEjecutando){
