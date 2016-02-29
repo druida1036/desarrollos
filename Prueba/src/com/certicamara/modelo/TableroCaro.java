@@ -1,5 +1,9 @@
 package com.certicamara.modelo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.certicamara.annotations.TipoVehiculo;
+
 public class TableroCaro {
 
 	private boolean consolaEjecutando = true;
@@ -10,6 +14,9 @@ public class TableroCaro {
 	private String instruccion;
 	private Integer deltax;
 	private Integer deltay;
+	@Autowired
+	@TipoVehiculo("auto")
+	private Carro carro;
 
 	public void consultarPosicion() {
 		System.out.println(" Fila: " + xPosicion + ", Columna: " + yPosicion);
@@ -190,5 +197,13 @@ public class TableroCaro {
 
 	public void setInstruccion(String instruccion) {
 		this.instruccion = instruccion;
+	}
+
+	public Carro getCarro() {
+		return carro;
+	}
+
+	public void setCarro(Carro carro) {
+		this.carro = carro;
 	}
 }

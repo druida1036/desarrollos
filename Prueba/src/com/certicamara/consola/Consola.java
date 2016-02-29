@@ -2,13 +2,10 @@ package com.certicamara.consola;
 import java.util.Scanner;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.certicamara.command.Operacion;
-import com.certicamara.eventos.CustomEventHandler;
 import com.certicamara.eventos.CustomEventPublisher;
 import com.certicamara.modelo.TableroCaro;
-import com.certicamara.modelo.Vehiculo;
 
 
 public class Consola {
@@ -23,7 +20,6 @@ public class Consola {
 		boolean consolaEjecutando = true;
 		sc = new Scanner(System.in);
 	    context = new ClassPathXmlApplicationContext("com/certicamara/confg/applicationContext.xml");
-	    Vehiculo vehiculo = context.getBean(Vehiculo.class);
 //	    context.getEnvironment().setActiveProfiles("dev");
 //	    context.refresh();
 	    CustomEventPublisher publisher = context.getBean(CustomEventPublisher.class);
