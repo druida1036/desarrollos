@@ -2,9 +2,11 @@ package com.certicamara.beanPostProcessor;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
+@Profile("dev")
 public class CustomBeaPostProcessor implements BeanPostProcessor {
 
 	
